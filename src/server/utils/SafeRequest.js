@@ -19,7 +19,8 @@ class SafeRequest {
             data: []
         }   
 
-        return new Promise((resolve, reject) => {
+        // 线上给假数据
+        return config.result ? config.result : new Promise((resolve, reject) => {
             let ydfetch = fetch(this.baseUrl + this.options.url, this.options.params);
 
             console.log(this.baseUrl + this.options.url, this.options);
